@@ -19,7 +19,7 @@
     <div>
         <button class="showAll">显示全部</button>
     </div>
-    <div>
+    <div class="showText">
         <div class="voice"></div>
         <div class="ping"></div>
         <div class="pian"></div>
@@ -73,10 +73,26 @@ $(function(){
         $(".pian").show();
     });
    
+    $(document).keyup(function(event){
+        if(event.keyCode ==13){
+            $(".next").trigger("click");
+        }
+    });
 
     
 })
 </script>
+<style>
+    .showText>div{
+        display: inline-block;
+        vertical-align: top;
+        height: 100px;
+        width: 100rpx;
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 100px;
+    }
+</style>
     
 </body>
 </html>
