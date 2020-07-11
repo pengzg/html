@@ -10,7 +10,7 @@
 <div>
     <div>
         <button class="next">点击下一个(已选择<span class="choose"></span>)</button>
-        <button class="show" type="1">显示声音</button>
+        <button class="show" type="1">显示读音</button>
         <button class="show" type="2">显示平假</button>
         <button class="show" type="3">显示片假名</button>
         <input type="text" hidden value="1" class="showType">
@@ -29,14 +29,14 @@
 
 <script>
 $(function(){
-    var arr1=[1,2,3];
-    var arr2=["rrr","ddd","sss"];
-    var arr3=["aaa","bbb","ccc"];
+    var arr1=["a","i","u","e","o","ka","ki","ku","ke","ko","sa","si","su","se","so","ta","ti","tu","te","to","na","ni","nu","ne","no","ha","hi","hu","he","ho","ma","mi","mu","me","mo","ya","yi","yu","ye","yo","ra","ri","ru","re","ro","wa","wi","wu","we","wo"];
+    var arr3=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","イ","ユ","ェ","ヨ","ラ","リ","ル","レ","ロ","ワ","ィ","ウ","ェ","ヲ"];
+    var arr2=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","い","ゆ","え","よ","ら","り","る","れ","ろ","わ","（い）","（う）","（え）","を"];
     var arr4= ["","读音","平假名","片假名"]
-
+    $(".choose").text(arr4[1]);
     var int  = parseInt(Math.random()*27);
     $(".next").click(function(){
-        var int  = parseInt(Math.random()*3);
+        var int  = parseInt(Math.random()*50);
         console.log(int);
         $(".voice").text(arr1[int]);
         $(".ping").text(arr2[int]);
