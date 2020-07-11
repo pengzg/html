@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <button class="next">点击下一个(已选择<span class="choose"></span>)</button>
+        <button class="show" type="1">显示声音</button>
+        <button class="show" type="2">显示平假</button>
+        <button class="show" type="3">显示片假名</button>
+        <input type="text" hidden value="1" class="showType">
+       
+    </div>
+    <div>
+        <button class="showAll">显示全部</button>
+    </div>
+    <div>
+        <div class="voice"></div>
+        <div class="ping"></div>
+        <div class="pian"></div>
+    </div>
+    
+</div>
+
+<script>
+$(function(){
+    var arr1=[1,2,3];
+    var arr2=["rrr","ddd","sss"];
+    var arr3=["aaa","bbb","ccc"];
+    var arr4= ["","读音","平假名","片假名"]
+
+    var int  = parseInt(Math.random()*27);
+    $(".next").click(function(){
+        var int  = parseInt(Math.random()*3);
+        console.log(int);
+        $(".voice").text(arr1[int]);
+        $(".ping").text(arr2[int]);
+        $(".pian").text(arr3[int]);
+        if ($(".showType").val()=='1') {
+            $(".voice").show();
+            $(".ping").hide();
+            $(".pian").hide();
+        } else if ($(".showType").val()=='2') {
+            $(".ping").show();
+            $(".pian").hide();
+            $(".voice").hide();
+        } else {
+            $(".pian").show();
+            $(".ping").hide();
+            $(".voice").hide();
+        }
+       
+    });
+
+
+    $(".show").click(function(){
+        var type = $(this).attr("type");
+        $(".showType").val(type);
+        $(".choose").text(arr4[type]);
+        
+    });
+
+
+    $(".showAll").click(function(){
+       
+        $(".voice").show();
+        $(".ping").show();
+        $(".pian").show();
+    });
+   
+
+    
+})
+</script>
+    
+</body>
+</html>
