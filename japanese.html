@@ -9,15 +9,15 @@
 <body>
 <div>
     <div>
-        <button class="next">点击下一个(已选择<span class="choose"></span>)</button>
         <button class="show" type="1">显示罗马字</button>
         <button class="show" type="2">显示平假</button>
         <button class="show" type="3">显示片假名</button>
         <input type="text" hidden value="1" class="showType">
-       
+        <button class="next">点击下一个(已选择<span class="choose"></span>)</button>
+        <button class="showAll">显示全部</button>
     </div>
     <div>
-        <button class="showAll">显示全部</button>
+       
     </div>
     <div class="showText">
         <div class="voice"></div>
@@ -86,11 +86,11 @@ $(function(){
     .showText>div{
         display: inline-block;
         vertical-align: top;
-        height: 100px;
-        width: 100rpx;
-        font-size: 50px;
+        height: 200px;
+        width: 200rpx;
+        font-size: 150px;
         font-weight: bold;
-        line-height: 100px;
+        line-height: 200px;
     }
 </style>
     
